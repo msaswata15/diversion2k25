@@ -1,6 +1,6 @@
 # diversion2k25
-Our team project of 4 people. 
-Soham Ghosh
-Nilanjan Ghosh 
-Saswata Mondal 
+Our team project of 4 people. <br>
+Soham Ghosh<br>
+Nilanjan Ghosh <br>
+Saswata Mondal <br>
 Me
