@@ -1,0 +1,209 @@
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section - Unchanged */
+.hero {
+    background-image: url('/Branding/departments-banner.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 250px;
+    color: #000000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    /* Ensuring text stays aligned */
+    padding: 20px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    padding-left: 50px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+/* Container */
+.department-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 30px;
+}
+
+/* Left Section (Text Content) */
+.depdet {
+    flex: 1;
+    max-width: 60%;
+}
+
+.depdet h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.depdet h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #2461ff;
+}
+
+.depdet p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.depdet ul {
+    list-style: none;
+    padding: 0;
+}
+
+.depdet li {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Bullet Points */
+.depdet li::before {
+    content: '•';
+    color: #2461ff;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+/* Right Section (Image) */
+.department-image {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.department-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    justify-content: center;
+
+}
+
+/* ✅ MOBILE RESPONSIVENESS FIXES */
+@media (max-width: 1024px) {
+    .department-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 30px;
+    }
+
+    .depdet {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .department-image {
+        max-width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .department-image img {
+        width: 100%;
+    }
+}
+
+/* ✅ Further Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 150px;
+        padding: 10px;
+        font-size: 1.4rem;
+        /* Smooth transition */
+        font-weight: 600;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .depdet {
+        text-align: left;
+    }
+
+    .depdet h2 {
+        font-size: 1.75rem;
+    }
+
+    .depdet h3 {
+        font-size: 1.3rem;
+    }
+
+    .depdet p {
+        font-size: 1rem;
+    }
+
+    .depdet ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .depdet li {
+        font-size: 0.95rem;
+    }
+
+    .department-image img {
+        width: 100%;
+        margin-left: auto;
+    }
+}
+
+/* ✅ Smallest Screen Adjustments */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 120px;
+        /* Reduce height further */
+        padding: 5px;
+        font-size: 0.9rem !important;
+        /* Force text to shrink */
+        font-weight: 500;
+        text-align: center;
+        /* Keep text aligned properly */
+    }
+
+    .depdet {
+        text-align: left;
+    }
+
+    .depdet h2 {
+        font-size: 1.5rem;
+    }
+
+    .depdet h3 {
+        font-size: 1.2rem;
+    }
+
+    .depdet p {
+        font-size: 0.95rem;
+    }
+
+    .department-image img {
+        width: 100%;
+
+    }
+}
+
+.meetdoc {
+    margin-top: 50px;
+}
