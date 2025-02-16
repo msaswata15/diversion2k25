@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import './doctor.css'
+import "./doctor.css";
 
 const Doctor = (props) => {
   return (
@@ -13,21 +13,21 @@ const Doctor = (props) => {
         <p className="doctor-text2">{props.text}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Doctor.defaultProps = {
-  heading: 'Dr. Audrey Smith',
-  imageSrc: '/Doctors/doctor-1-300w.png',
-  imageAlt: 'image',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-}
+  heading: "Dr. Audrey Smith",
+  imageSrc: "/Doctors/doctor-1-300w.png",
+  imageAlt: "image",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+};
 
 Doctor.propTypes = {
   heading: PropTypes.string,
   imageSrc: PropTypes.string,
   imageAlt: PropTypes.string,
   text: PropTypes.string,
-}
+};
 
-export default Doctor
+export default Doctor;
