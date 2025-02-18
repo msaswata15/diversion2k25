@@ -19,10 +19,10 @@ const Practice = (props) => {
   );
 };
 
-Practice.Props = {
+Practice.defaultProps = {
   title: "Cardiology",
   description:
-    "Our team of highly skilled and experienced cardiology specialists is dedicated to providing exceptional cardiovascular care.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
 };
 
 Practice.propTypes = {

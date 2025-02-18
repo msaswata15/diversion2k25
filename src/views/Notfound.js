@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Helmet } from 'react-helmet'
 
-import './not-found.css'
+import './Notfound.css'
 
-const NotFound = (props) => {
+const Notfound = (props) => {
   return (
     <div className="not-found-container1">
       <Helmet>
@@ -23,4 +23,4 @@ const NotFound = (props) => {
   )
 }
 
-export default NotFound
+export default Notfound

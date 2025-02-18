@@ -4,27 +4,6 @@ import PropTypes from "prop-types";
 
 import "./features.css";
 
-const FeatureList = [
-  {
-    title: "Virtual Clinic",
-    description:
-      "Connect with doctors anytime, anywhere for consultations, prescriptions, and expert medical advice—all from the comfort of your home.",
-    icon: "/Icons/arrow.svg",
-  },
-  {
-    title: "Virtual Assistant",
-    description:
-      "Effortlessly manage appointments, access health information, and get instant support—enhancing convenience, communication, and care.",
-    icon: "/Icons/arrow.svg",
-  },
-  {
-    title: "Clinical Lab",
-    description:
-      "Get fast, secure, and accurate test results online, ensuring timely access to vital health insights for better decision-making.",
-    icon: "/Icons/arrow.svg",
-  },
-];
-
 const Features = (props) => {
   return (
     <div className="features-section quick-links">
@@ -38,20 +17,16 @@ const Features = (props) => {
   );
 };
 
-Features.propTypes = {
-  description: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+Features.defaultProps = {
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  icon: "/Icons/arrow.svg",
+  title: "Virtual Assistant",
 };
 
-const FeaturesSection = () => {
-  return (
-    <div className="features-container">
-      {FeatureList.map((feature, index) => (
-        <Features key={index} {...feature} />
-      ))}
-    </div>
-  );
+Features.propTypes = {
+  description: PropTypes.string,
+  icon: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default Features;
