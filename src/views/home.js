@@ -466,33 +466,170 @@ const Home = (props) => {
         </div>
       </section>
       {/* Search Section */}
-      <div className="home-search1">
-        <div className="home-alphabet">
-          {Array.from("abcdefghijklmnopqrstuvwxyz").map((letter) => (
-            <div
-              key={letter}
-              data-letter={letter}
-              className={`letter ${activeLetters.includes(letter) ? "letter-active" : ""}`}
-              onClick={() => handleLetterClick(letter)}
-            >
-              <span>{letter.toUpperCase()}</span>
-            </div>
-          ))}
+        <div className="home-search1">
+        <div className="home-heading24">
+          <h2 className="home-text33">Search diseases &amp; conditions</h2>
+          <p className="home-text34">
+            Check your body for these diseases.
+            <br /> But it's okay, don't worry for we have your back.
+          </p>
         </div>
-        {showResults && (
-          <div data-teleport="results" className="home-results">
-            <span className="home-heading25">Results:</span>
-            <div data-results="letters" className="home-list1">
-              {searchResults.map((result, index) => (
-                <div key={index} className="search-result">
-                  <span className="result-text">{result.disease}</span>
-                </div>
-              ))}
+        <div className="home-content18">
+          <div className="home-type-one">
+            <div className="home-alphabet">
+              <div data-letter="a" className="letter">
+                <span className="home-text35">A</span>
+              </div>
+              <div data-letter="b" className="letter">
+                <span className="home-text36">B</span>
+              </div>
+              <div data-letter="c" className="letter">
+                <span className="home-text37">C</span>
+              </div>
+              <div data-letter="d" className="letter">
+                <span className="home-text38">D</span>
+              </div>
+              <div data-letter="e" className="letter">
+                <span className="home-text39">E</span>
+              </div>
+              <div data-letter="f" className="letter">
+                <span className="home-text40">F</span>
+              </div>
+              <div data-letter="g" className="letter">
+                <span className="home-text41">G</span>
+              </div>
+              <div data-letter="h" className="letter">
+                <span className="home-text42">H</span>
+              </div>
+              <div data-letter="i" className="letter">
+                <span className="home-text43">I</span>
+              </div>
+              <div data-letter="j" className="letter">
+                <span className="home-text44">J</span>
+              </div>
+              <div data-letter="k" className="letter">
+                <span className="home-text45">K</span>
+              </div>
+              <div data-letter="l" className="letter">
+                <span className="home-text46">L</span>
+              </div>
+              <div data-letter="m" className="letter">
+                <span className="home-text47">M</span>
+              </div>
+              <div data-letter="n" className="letter">
+                <span className="home-text48">N</span>
+              </div>
+              <div data-letter="o" className="letter">
+                <span className="home-text49">O</span>
+              </div>
+              <div data-letter="p" className="letter">
+                <span className="home-text50">P</span>
+              </div>
+              <div data-letter="q" className="letter">
+                <span className="home-text51">Q</span>
+              </div>
+              <div data-letter="r" className="letter">
+                <span className="home-text52">R</span>
+              </div>
+              <div data-letter="s" className="letter">
+                <span className="home-text53">S</span>
+              </div>
+              <div data-letter="t" className="letter">
+                <span className="home-text54">T</span>
+              </div>
+              <div data-letter="u" className="letter">
+                <span className="home-text55">U</span>
+              </div>
+              <div data-letter="v" className="letter">
+                <span className="home-text56">V</span>
+              </div>
+              <div data-letter="w" className="letter">
+                <span className="home-text57">W</span>
+              </div>
+              <div data-letter="x" className="letter">
+                <span className="home-text58">X</span>
+              </div>
+              <div data-letter="y" className="letter">
+                <span className="home-text59">Y</span>
+              </div>
+              <div data-letter="z" className="letter">
+                <span className="home-text60">Z</span>
+              </div>
+            </div>
+            <p className="home-text61">
+              You don’t know it’s name? Check out symptom checker below
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: " ",
+                }}
+              />
+            </p>
+            <div data-teleport="results" className="home-results">
+              <span className="home-heading25">Results:</span>
+              <div data-results="letters" className="home-list1"></div>
             </div>
           </div>
-        )}
+          <div className="home-type-two">
+            <div className="home-heading26">
+              <h3 className="home-text62">Symptom checker</h3>
+              <p className="home-text63">Suggestions</p>
+            </div>
+            <div className="home-symptoms1">
+              <div className="home-row1">
+                <div className="symptom">
+                  <span className="home-text64">Abdominal pain</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text65">Chest pain</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text66">Constipation</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text67">Cough</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text68">Breath difficulty</span>
+                </div>
+              </div>
+              <div className="home-row2">
+                <div className="symptom">
+                  <span className="home-text69">Red eye</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text70">Foot pain</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text71">Foot swelling</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text72">Headache</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text73">Heart palpitation</span>
+                </div>
+              </div>
+              <div className="home-row3">
+                <div className="symptom">
+                  <span className="home-text74">Knee pain</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text75">Hip pain</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text76">Low back pain</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text77">Nasal congestion</span>
+                </div>
+                <div className="symptom">
+                  <span className="home-text78">Neck pain</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
       <Meetdoc />
 
       {/* Footer Section */}
