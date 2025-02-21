@@ -17,8 +17,8 @@ const Home = (props) => {
 
   // Handle modal functionality
   useEffect(() => {
-    const modalOpen = document.querySelectorAll('[data-open]');
-    const modalClose = document.querySelectorAll('[data-close]');
+    const modalOpen = document.querySelectorAll("[data-open]");
+    const modalClose = document.querySelectorAll("[data-close]");
 
     const handleModalOpen = (event) => {
       const modal = document.querySelector(
@@ -127,7 +127,9 @@ const Home = (props) => {
               data-close="practices"
               className="home-close"
               onClick={() => {
-                const modal = document.querySelector('[data-modal="practices"]');
+                const modal = document.querySelector(
+                  '[data-modal="practices"]'
+                );
                 if (modal) {
                   modal.style.display = "none";
                 }
@@ -159,8 +161,11 @@ const Home = (props) => {
               <div className="home-heading12">
                 <span className="home-header12">Orthopedics</span>
                 <span className="home-caption2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Our team consists of highly skilled and experienced orthopedic
+                  specialists dedicated to providing exceptional musculoskeletal
+                  care. With expertise in treating bone, joint, and spine
+                  conditions, we are committed to helping patients regain
+                  mobility and improve their quality of life.
                 </span>
               </div>
               <div className="read-more">
@@ -176,8 +181,11 @@ const Home = (props) => {
               <div className="home-heading13">
                 <span className="home-header13">Ophtalmology</span>
                 <span className="home-caption3">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Our team consists of highly skilled and experienced
+                  ophthalmology specialists dedicated to providing exceptional
+                  eye care. With expertise in diagnosing and treating a wide
+                  range of vision and eye health conditions, we are committed to
+                  preserving and enhancing your sight.
                 </span>
               </div>
               <div className="read-more">
@@ -193,8 +201,11 @@ const Home = (props) => {
               <div className="home-heading14">
                 <span className="home-header14">Pediatrics</span>
                 <span className="home-caption4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Our team consists of highly skilled and experienced pediatrics
+                  specialists dedicated to providing exceptional care for
+                  infants, children, and adolescents. With a compassionate
+                  approach, we focus on promoting healthy growth, development,
+                  and well-being at every stage of childhood.
                 </span>
               </div>
               <div className="read-more">
@@ -210,8 +221,11 @@ const Home = (props) => {
               <div className="home-heading15">
                 <span className="home-header15">Nutrition</span>
                 <span className="home-caption5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Our team consists of highly skilled and experienced nutrition
+                  specialists dedicated to promoting optimal health through
+                  personalized dietary guidance. With expertise in balanced
+                  nutrition and wellness, we help individuals achieve their
+                  health goals through informed and sustainable choices.
                 </span>
               </div>
               <div className="read-more">
@@ -227,8 +241,11 @@ const Home = (props) => {
               <div className="home-heading16">
                 <span className="home-header16">General</span>
                 <span className="home-caption6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Our team consists of highly skilled and experienced medical
+                  specialists dedicated to providing comprehensive and
+                  compassionate healthcare. With expertise across various
+                  medical fields, we are committed to ensuring the well-being
+                  and quality of life of our patients.
                 </span>
               </div>
               <div className="read-more">
@@ -466,7 +483,7 @@ const Home = (props) => {
         </div>
       </section>
       {/* Search Section */}
-        <div className="home-search1">
+      <div className="home-search1">
         <div className="home-heading24">
           <h2 className="home-text33">Search diseases &amp; conditions</h2>
           <p className="home-text34">
@@ -630,6 +647,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
+
       <Meetdoc />
 
       {/* Footer Section */}
