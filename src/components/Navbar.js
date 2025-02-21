@@ -16,14 +16,8 @@ const Navbar = () => {
                     </Link>
                     <nav className="home-links1">
                         <Link to="/department" className="home-link10">Departments</Link>
-                        <a
-                            href="https://example.com"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
-                            Topic
-                        </a>
-                        <Link to="/how-it-works" className="home-link12">How it works</Link>
+
+                        <Link to="/how-it-works" className="home-link12">News</Link>
                         <Link to="/about" className="home-link13">About</Link>
                         <Link to="/contact" className="home-link14">Contact</Link>
                     </nav>
