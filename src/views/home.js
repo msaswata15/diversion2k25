@@ -317,34 +317,36 @@ const Home = (props) => {
         </div>
         <div className="home-content12">
           <div className="home-grid2">
-            <Link to="/">
+            <Link to="/department/cardiology">
               <div className="home-practice-wrapper1">
-                <Practice title="Cardiology"></Practice>
+                <Practice title="Cardiology" description="Our team consists of highly skilled and experienced cardiology
+                  specialists dedicated to providing exceptional cardiovascular
+                  care."></Practice>
               </div>
             </Link>
-            <Link to="/">
+            <Link to="/department/orthopedics">
               <div className="home-practice-wrapper2">
                 <Practice title="Orthopedics"></Practice>
               </div>
             </Link>
-            <Link to="/">
+            <Link to="/department/ophthalmology">
               <div className="home-practice-wrapper3">
                 <Practice title="Ophtalmology"></Practice>
               </div>
             </Link>
-            <Link to="/">
+            <Link to="/department/pediatrics">
               <div className="home-practice-wrapper4">
                 <Practice title="Pediatrics"></Practice>
               </div>
             </Link>
-            <Link to="/">
+            <Link to="/department/Nutrition">
               <div className="home-practice-wrapper5">
                 <Practice title="Nutrition"></Practice>
               </div>
             </Link>
-            <Link to="/">
+            <Link to="/department/general-medicine">
               <div className="home-practice-wrapper6">
-                <Practice title="General"></Practice>
+                <Practice title="Medicine" description=""></Practice>
               </div>
             </Link>
           </div>

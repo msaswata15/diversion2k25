@@ -1,8 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-import './Navbar.css'
 const Navbar = () => {
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    const departments = [
+        { name: "General Medicine", link: "/department/general-medicine" },
+        { name: "Cardiology", link: "/department/cardiology" },
+        { name: "Neurology", link: "/department/neurology" },
+        { name: "Pediatrics", link: "/department/pediatrics" },
+        { name: "Ophthalmology", link: "/department/ophthalmology" },
+        { name: "Nutrition", link: "/department/nutrition" },
+        {
+            name: "Orthopedics", link: "/department/orthopedics"
+        },
+
+    ];
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setShowDropdown(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    // Toggle mobile menu
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen((prev) => !prev);
+    };
+
     return (
         <header className="home-header17">
             <header data-thq="thq-navbar" className="home-navbar">
@@ -14,82 +49,60 @@ const Navbar = () => {
                             className="home-logo"
                         />
                     </Link>
-                    <nav className="home-links1">
-                        <Link to="/department" className="home-link10">Departments</Link>
+
+                    {/* Hamburger Menu for Mobile */}
+                    <div className="hamburger-menu" onClick={toggleMobileMenu}>
+                        <div className="hamburger-line"></div>
+                        <div className="hamburger-line"></div>
+                        <div className="hamburger-line"></div>
+                    </div>
+
+                    {/* Navigation Links */}
+                    <nav className={`home-links1 ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}>
+                        {/* Departments Dropdown */}
+                        <div className="dropdown-container" ref={dropdownRef}>
+                            <button
+                                className="home-link10 dropdown-button"
+                                onClick={() => setShowDropdown((prev) => !prev)}
+                            >
+                                Departments ▾
+                            </button>
+                            {showDropdown && (
+                                <div className="dropdown-menu">
+                                    {departments.map((dept, index) => (
+                                        <Link
+                                            key={index}
+                                            to={dept.link}
+                                            className="dropdown-item"
+                                            onClick={() => setShowDropdown(false)}
+                                        >
+                                            {dept.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
 
                         <Link to="/news" className="home-link12">News</Link>
                         <Link to="/about" className="home-link13">About</Link>
                         <Link to="/contact" className="home-link14">Contact</Link>
                     </nav>
                 </div>
+
                 <div className="home-right1">
-                    <button
-                        className="home-phone button"
-                        onClick={() => window.location.href = "tel:9830559040"} // ✅ Clicking calls the number
-                    >
-                        <img
-                            alt="Call Icon"
-                            src="/Icons/phone.svg"
-                            className="home-image16"
-                        />
+                    <button className="home-phone button" onClick={() => window.location.href = "tel:9830559040"}>
+                        <img alt="Call Icon" src="/Icons/phone.svg" className="home-image16" />
                         <span className="home-text29">1800 101 6346</span>
                     </button>
 
                     <a href="/auth" className="home-book1 button button-main">
-                        <img
-                            alt="image"
-                            src="/Icons/calendar.svg"
-                            className="home-image17"
-                        />
+                        <img alt="image" src="/Icons/calendar.svg" className="home-image17" />
                         <span className="home-text17">Book an appointment</span>
                     </a>
                 </div>
-                <div data-thq="thq-burger-menu" className="home-burger-menu">
-                    <svg viewBox="0 0 1024 1024" className="home-icon2">
-                        <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
-                    </svg>
-                </div>
-                <div data-thq="thq-mobile-menu" className="home-mobile-menu">
-                    <div
-                        data-thq="thq-mobile-menu-nav"
-                        data-role="Nav"
-                        className="home-nav1"
-                    >
-                        <div className="home-container2">
-                            <img
-                                alt="image"
-                                src="/Branding/logo-1500h.png"
-                                className="home-image18"
-                            />
-                            <div data-thq="thq-close-menu" className="home-menu-close">
-                                <svg viewBox="0 0 1024 1024" className="home-icon4">
-                                    <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <nav
-                            data-thq="thq-mobile-menu-nav-links"
-                            data-role="Nav"
-                            className="home-nav2"
-                        >
-                            <Link to="/department" className="home-text18">Departments</Link>
-                            <Link to="/news" className="home-text19">News</Link>
-                            <Link to="/about" className="home-text20">About</Link>
-                            <Link to="/contact" className="home-text21">Contact</Link>
-                            <a href="/auth" className="home-book2 button button-main">
-                                <img
-                                    alt="image"
-                                    src="/Icons/calendar.svg"
-                                    className="home-image19"
-                                />
-                                <span className="home-text22">Book an appointment</span>
-                            </a>
-                        </nav>
-                    </div>
-                </div>
             </header>
         </header>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
