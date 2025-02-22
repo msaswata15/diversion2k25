@@ -278,7 +278,10 @@ const Home = (props) => {
                 treatments, we ensure that you receive the best care possible.
               </p>
             </div>
-            <button className="button button-main home-book3">
+            <button
+              className="button button-main home-book3"
+              onClick={() => (window.location.href = "/auth")}
+            >
               <img
                 alt="image"
                 src="/Icons/calendar.svg"
