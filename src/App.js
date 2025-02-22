@@ -15,6 +15,7 @@ import GeneralMedicine from './views/GeneralMedicine';
 import Nutrition from './views/Nutrition';
 import Pediatrics from './views/Pediatrics';
 import Ophthalmology from './views/Opthalmology';
+import Dashboard from './views/Dashboard';
 
 const App = () => {
     const [users, setUsers] = useState([]);
@@ -31,6 +32,8 @@ const App = () => {
                 <Route path="/auth" element={<Auth />} />
 
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/patient/dashboard" element={<Dashboard />} />
+
                 <Route path="*" element={<Notfound />} />
                 <Route path="/department/cardiology" element={<Cardiology />} />
                 <Route path="/department/neurology" element={<Neurology />} />

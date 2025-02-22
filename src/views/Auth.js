@@ -48,7 +48,7 @@ const Auth = () => {
         if (isSignup) {
             console.log("Signup Data:", Object.fromEntries(formData.entries()));
             setFlashMessage({ message: "Signup Successful!", type: "success" });
-            setTimeout(() => navigate("/dashboard"), 1000);
+            setTimeout(() => navigate("/patient/dashboard"), 1000);
         } else {
             if (email === "user@example.com" && password === "password123") {
                 setFlashMessage({ message: "Login Successful!", type: "success" });
