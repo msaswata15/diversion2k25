@@ -297,9 +297,21 @@ const Home = (props) => {
         </div>
         <div id="features" className="home-features1">
           <div className="home-content11">
-            <Features></Features>
-            <Features title="Virtual Clinic"></Features>
-            <Features title="Clinical results"></Features>
+            <Features
+              title="Virtual Assistant"
+              icon="../../public/Icons/arrow-2.svg"
+              description="Our Virtual Assistant automates appointments, manages records, handles billing, and streamlines hospital operations efficiently."
+            ></Features>
+            <Features
+              title="Virtual Clinic"
+              icon="../../public/Icons/arrow-2.svg"
+              description="Our Virtual Clinic enables remote consultations, manages patient records, and streamlines prescriptions for efficient healthcare delivery."
+            ></Features>
+            <Features
+              title="Clinical results"
+              icon="../../public/Icons/arrow-2.svg"
+              description="Our Clinical Results system automates test reporting, manages patient records, and ensures quick and accurate result delivery."
+            ></Features>
           </div>
         </div>
         <div className="home-background"></div>
@@ -319,9 +331,12 @@ const Home = (props) => {
           <div className="home-grid2">
             <Link to="/department/cardiology">
               <div className="home-practice-wrapper1">
-                <Practice title="Cardiology" description="Our team consists of highly skilled and experienced cardiology
+                <Practice
+                  title="Cardiology"
+                  description="Our team consists of highly skilled and experienced cardiology
                   specialists dedicated to providing exceptional cardiovascular
-                  care."></Practice>
+                  care."
+                ></Practice>
               </div>
             </Link>
             <Link to="/department/orthopedics">
@@ -366,14 +381,15 @@ const Home = (props) => {
         </div>
         <div className="home-content13">
           <div className="home-video1">
-            <video
-              src
-              poster="/video-1500w.png"
-              className="home-video2"
-            ></video>
-            <div className="home-play">
-              <img alt="image" src="/Icons/play.svg" className="home-image23" />
-            </div>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/jvmnZ_WyZ5g"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
           <div className="home-caption8">
             <h3 className="home-header21">

@@ -625,7 +625,6 @@
 
 .home-content11 {
   gap: var(--dl-space-space-threeunits);
-  flex: 1;
   display: flex;
   max-width: 1440px;
   align-items: center;
@@ -653,7 +652,7 @@
   display: flex;
   max-width: 1440px;
   align-items: flex-start;
-  padding-top: 25vw;
+  padding-top: 30vw;
   padding-left: var(--dl-space-space-fiveunits);
   padding-right: 120px;
   flex-direction: row;
@@ -2384,10 +2383,6 @@
     padding-top: var(--dl-space-space-fourunits);
     flex-direction: row;
     padding-bottom: var(--dl-space-space-fourunits);
-  }
-
-  .home-content11 {
-    flex-direction: column;
   }
 
   .home-background {

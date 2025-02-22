@@ -17,12 +17,6 @@ const Features = (props) => {
   );
 };
 
-Features.defaultProps = {
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  icon: "/Icons/arrow.svg",
-  title: "Virtual Assistant",
-};
-
 Features.propTypes = {
   description: PropTypes.string,
   icon: PropTypes.string,
