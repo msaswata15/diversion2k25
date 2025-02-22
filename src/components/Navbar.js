@@ -23,14 +23,18 @@ const Navbar = () => {
                     </nav>
                 </div>
                 <div className="home-right1">
-                    <button className="home-phone button">
+                    <button
+                        className="home-phone button"
+                        onClick={() => window.location.href = "tel:9830559040"} // ✅ Clicking calls the number
+                    >
                         <img
-                            alt="image"
+                            alt="Call Icon"
                             src="/Icons/phone.svg"
                             className="home-image16"
                         />
                         <span className="home-text29">1800 101 6346</span>
                     </button>
+
                     <a href="#book" className="home-book1 button button-main">
                         <img
                             alt="image"
