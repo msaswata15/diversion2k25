@@ -1,36 +1,22 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
-const bodyParser = require('body-parser');
-const { User } = require('./models'); // Import models
-
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
-app.use(cors()); // Allow frontend requests
-app.use(bodyParser.json());
+// Middleware
+app.use(cors());  // Allow requests from frontend
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// API Routes
-app.get('/', (req, res) => {
-    res.send('Server is running...');
-});
+// Serve static files (for images, CSS, etc.)
+app.use('/public', express.static(path.join(__dirname, '../public')));
 
-// Create a user
-app.post('/users', async (req, res) => {
-    try {
-        const user = await User.create(req.body);
-        res.json(user);
-    } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-});
+// Import and use routes
+const routes = require('./routes');
+app.use('/api', routes); // ✅ Prefix API routes with `/api`
 
-// Get all users
-app.get('/users', async (req, res) => {
-    const users = await User.findAll();
-    res.json(users);
-});
-
-// Start server
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

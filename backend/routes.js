@@ -1,109 +1,40 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { User } = require('./models'); // Import User model
 const router = express.Router();
-const { User, Appointment, Department, JobApplication, Payment, MedicalRecord, HospitalVisit, Donor, DoctorSchedule, HospitalLocation } = require('./models');
 
-// Home route
-router.get('/', (req, res) => {
-    res.send('Welcome to the Hospital Management System API');
+const SECRET_KEY = 'your_secret_key'; // Change this in production
+
+// Register Route
+router.post('/register', async (req, res) => {
+    try {
+        const { full_name, email, phone, password, user_type } = req.body;
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = await User.create({
+            full_name, email, phone, password_hash: hashedPassword, user_type
+        });
+        res.status(201).json({ message: 'User registered successfully', user });
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
 });
 
-// Users Routes
-router.get('/users', async (req, res) => {
-    const users = await User.findAll();
-    res.json(users);
-});
+// Login Route
+router.post('/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const user = await User.findOne({ where: { email } });
+        if (!user) return res.status(404).json({ message: 'User not found' });
 
-router.post('/users', async (req, res) => {
-    const user = await User.create(req.body);
-    res.json(user);
-});
+        const isMatch = await bcrypt.compare(password, user.password_hash);
+        if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
 
-// Appointments Routes
-router.get('/appointments', async (req, res) => {
-    const appointments = await Appointment.findAll();
-    res.json(appointments);
-});
-
-router.post('/appointments', async (req, res) => {
-    const appointment = await Appointment.create(req.body);
-    res.json(appointment);
-});
-
-// Departments Routes
-router.get('/departments', async (req, res) => {
-    const departments = await Department.findAll();
-    res.json(departments);
-});
-
-router.post('/departments', async (req, res) => {
-    const department = await Department.create(req.body);
-    res.json(department);
-});
-
-// Job Applications Routes
-router.get('/job-applications', async (req, res) => {
-    const applications = await JobApplication.findAll();
-    res.json(applications);
-});
-
-router.post('/job-applications', async (req, res) => {
-    const application = await JobApplication.create(req.body);
-    res.json(application);
-});
-
-// Payments Routes
-router.get('/payments', async (req, res) => {
-    const payments = await Payment.findAll();
-    res.json(payments);
-});
-
-router.post('/payments', async (req, res) => {
-    const payment = await Payment.create(req.body);
-    res.json(payment);
-});
-
-// Hospital Visits Routes
-router.get('/hospital-visits', async (req, res) => {
-    const visits = await HospitalVisit.findAll();
-    res.json(visits);
-});
-
-router.post('/hospital-visits', async (req, res) => {
-    const visit = await HospitalVisit.create(req.body);
-    res.json(visit);
-});
-
-// Donors Routes
-router.get('/donors', async (req, res) => {
-    const donors = await Donor.findAll();
-    res.json(donors);
-});
-
-router.post('/donors', async (req, res) => {
-    const donor = await Donor.create(req.body);
-    res.json(donor);
-});
-
-// Doctor Schedules Routes
-router.get('/doctor-schedules', async (req, res) => {
-    const schedules = await DoctorSchedule.findAll();
-    res.json(schedules);
-});
-
-router.post('/doctor-schedules', async (req, res) => {
-    const schedule = await DoctorSchedule.create(req.body);
-    res.json(schedule);
-});
-
-// Hospital Locations Routes
-router.get('/hospital-locations', async (req, res) => {
-    const locations = await HospitalLocation.findAll();
-    res.json(locations);
-});
-
-router.post('/hospital-locations', async (req, res) => {
-    const location = await HospitalLocation.create(req.body);
-    res.json(location);
+        const token = jwt.sign({ user_id: user.user_id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
+        res.json({ message: 'Login successful', token });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error' });
+    }
 });
 
 module.exports = router;

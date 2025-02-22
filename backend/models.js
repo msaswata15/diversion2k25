@@ -10,6 +10,7 @@ const sequelize = new Sequelize({
 const User = sequelize.define('User', {
     user_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     full_name: { type: DataTypes.STRING, allowNull: false },
+    image : { type: DataTypes.STRING },
     email: { type: DataTypes.STRING, unique: true, allowNull: false },
     phone: { type: DataTypes.STRING(15), allowNull: false },
     password_hash: { type: DataTypes.STRING, allowNull: false },
@@ -65,9 +66,11 @@ const MedicalRecord = sequelize.define('MedicalRecord', {
     patient_id: { type: DataTypes.INTEGER, allowNull: false },
     visit_id: { type: DataTypes.INTEGER },
     test_results: { type: DataTypes.TEXT },
-    prescription: { type: DataTypes.TEXT },
+    test_pdf: { type: DataTypes.BLOB('long') }, // Storing PDF as BLOB
+    prescription: { type: DataTypes.BLOB('long') }, // Storing PDF as BLOB
     last_updated: { type: DataTypes.DATE, defaultValue: Sequelize.NOW }
 });
+
 
 const HospitalVisit = sequelize.define('HospitalVisit', {
     visit_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -158,12 +161,21 @@ SymptomLog.belongsTo(User, { foreignKey: 'user_id' });
 User.hasMany(ChatbotInteraction, { foreignKey: 'user_id' });
 ChatbotInteraction.belongsTo(User, { foreignKey: 'user_id' });
 
+
 // Associations
 Department.belongsTo(User, { as: 'Admin', foreignKey: 'user_id' });
 User.hasMany(Appointment, { foreignKey: 'patient_id' });
 User.hasMany(Appointment, { foreignKey: 'doctor_id' });
 User.hasMany(HospitalVisit, { foreignKey: 'patient_id' });
 User.hasMany(HospitalVisit, { foreignKey: 'doctor_id' });
+User.hasMany(MedicalRecord, { foreignKey: 'patient_id' });
+User.hasMany(Payment, { foreignKey: 'patient_id' });
+User.hasMany(Donor, { foreignKey: 'user_id' });
+User.hasMany(DoctorSchedule, { foreignKey: 'doctor_id' });
+User.hasMany(Prediction, { foreignKey: 'user_id' });
+User.hasMany(SymptomLog, { foreignKey: 'user_id' });
+User.hasMany(ChatbotInteraction, { foreignKey: 'user_id' });
+User.hasMany(JobApplication, { foreignKey: 'user_id' });
 Appointment.belongsTo(User, { as: 'Patient', foreignKey: 'patient_id' });
 Appointment.belongsTo(User, { as: 'Doctor', foreignKey: 'doctor_id' });
 HospitalVisit.belongsTo(User, { as: 'Patient', foreignKey: 'patient_id' });
