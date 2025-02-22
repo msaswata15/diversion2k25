@@ -6,8 +6,10 @@
   "dependencies": {
     "@craco/craco": "^5.9.0",
     "axios": "^1.7.9",
+    "bcryptjs": "^3.0.2",
     "chart.js": "^4.4.8",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "framer-motion": "^12.4.7",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.12.0",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Auth.css"; // Updated CSS file
 
 const Auth = () => {
@@ -18,16 +19,16 @@ const Auth = () => {
     const validateForm = (formData) => {
         let newErrors = {};
         if (isSignup) {
-            if (!formData.get("name").trim()) newErrors.name = "Name is required!";
-            if (!formData.get("address").trim()) newErrors.address = "Address is required!";
+            if (!formData.name.trim()) newErrors.name = "Name is required!";
+            if (!formData.address.trim()) newErrors.address = "Address is required!";
 
             const phonePattern = /^[6-9]\d{9}$/;
-            if (!phonePattern.test(formData.get("phone"))) newErrors.phone = "Invalid phone number!";
+            if (!phonePattern.test(formData.phone)) newErrors.phone = "Invalid phone number!";
 
-            if (parseInt(formData.get("age")) < 18) newErrors.age = "You must be 18+!";
+            if (parseInt(formData.age) < 18) newErrors.age = "You must be 18+!";
         }
 
-        if (!checkPasswordStrength(formData.get("password"))) {
+        if (!checkPasswordStrength(formData.password)) {
             newErrors.password = "Must have 8+ chars, 1 uppercase, 1 number, 1 special char!";
         }
 
@@ -36,26 +37,35 @@ const Auth = () => {
     };
 
     // Handle Login or Signup
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
+        const userData = Object.fromEntries(formData.entries());
 
-        if (!validateForm(formData)) return;
+        if (!validateForm(userData)) return;
 
-        const email = formData.get("email");
-        const password = formData.get("password");
+        const url = isSignup
+            ? "http://localhost:5000/api/auth/signup"
+            : "http://localhost:5000/api/auth/login";
 
-        if (isSignup) {
-            console.log("Signup Data:", Object.fromEntries(formData.entries()));
-            setFlashMessage({ message: "Signup Successful!", type: "success" });
-            setTimeout(() => navigate("/patient/dashboard"), 1000);
-        } else {
-            if (email === "user@example.com" && password === "password123") {
-                setFlashMessage({ message: "Login Successful!", type: "success" });
-                setTimeout(() => navigate("/dashboard"), 1000);
-            } else {
-                setFlashMessage({ message: "Invalid Credentials!", type: "danger" });
-            }
+        try {
+            const { data } = await axios.post(url, userData, {
+                headers: { "Content-Type": "application/json" },
+            });
+
+            // Store token in localStorage
+            localStorage.setItem("authToken", data.token);
+
+            setFlashMessage({ message: data.message, type: "success" });
+
+            setTimeout(() => {
+                navigate(isSignup ? "/patient/dashboard" : "/patient/dashboard");
+            }, 1000);
+        } catch (error) {
+            setFlashMessage({
+                message: error.response?.data?.error || "Server Error! Try again later.",
+                type: "danger",
+            });
         }
     };
 
@@ -63,7 +73,9 @@ const Auth = () => {
         <div id="auth-page">
             <div id="auth-box">
                 {flashMessage.message && (
-                    <div className={`auth-alert auth-alert-${flashMessage.type}`}>{flashMessage.message}</div>
+                    <div className={`auth-alert auth-alert-${flashMessage.type}`}>
+                        {flashMessage.message}
+                    </div>
                 )}
 
                 <form onSubmit={handleSubmit}>
@@ -88,7 +100,9 @@ const Auth = () => {
                             </div>
                             <div className="auth-input-box">
                                 <select name="gender" id="auth-gender" required>
-                                    <option value="" disabled selected>Choose Gender</option>
+                                    <option value="" disabled selected>
+                                        Choose Gender
+                                    </option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Other">Other</option>
@@ -113,7 +127,9 @@ const Auth = () => {
                         {errors.password && <span className="auth-error-text">{errors.password}</span>}
                     </div>
 
-                    <button type="submit" id="auth-button">{isSignup ? "Sign Up" : "Login"}</button>
+                    <button type="submit" id="auth-button">
+                        {isSignup ? "Sign Up" : "Login"}
+                    </button>
 
                     <p>
                         {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
