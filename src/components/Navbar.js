@@ -17,7 +17,7 @@ const Navbar = () => {
                     <nav className="home-links1">
                         <Link to="/department" className="home-link10">Departments</Link>
 
-                        <Link to="/how-it-works" className="home-link12">News</Link>
+                        <Link to="/news" className="home-link12">News</Link>
                         <Link to="/about" className="home-link13">About</Link>
                         <Link to="/contact" className="home-link14">Contact</Link>
                     </nav>
@@ -69,7 +69,7 @@ const Navbar = () => {
                             className="home-nav2"
                         >
                             <Link to="/department" className="home-text18">Departments</Link>
-                            <Link to="/how-it-works" className="home-text19">News</Link>
+                            <Link to="/news" className="home-text19">News</Link>
                             <Link to="/about" className="home-text20">About</Link>
                             <Link to="/contact" className="home-text21">Contact</Link>
                             <a href="#book" className="home-book2 button button-main">

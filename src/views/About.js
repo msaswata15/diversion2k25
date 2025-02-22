@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
+import Appprom from '../components/Appprom'
+import Footer from '../components/Footer'
+import './home.css'
 
 const About = () => {
     return (
-        <div>About</div>
+        <div><Navbar /><Appprom /><Footer /></div>
     )
 }
 

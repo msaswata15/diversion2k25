@@ -6,6 +6,7 @@ import Home from './views/home';
 import Notfound from "./views/Notfound";
 import About from './views/About';
 import Contact from './views/Contact';
+import News from './views/News';
 
 const App = () => {
     return (
@@ -13,6 +14,8 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/department" element={<Department />} />
+                <Route path="/news" element={<News />} />
+
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<Notfound />} />
