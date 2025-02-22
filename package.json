@@ -2,15 +2,20 @@
   "name": "medica-template",
   "version": "1.0.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@craco/craco": "^5.9.0",
-    "dangerous-html": "^0.1.13",
+    "cors": "^2.8.5",
+    "mysql2": "^3.12.0",
     "next": "^15.1.7",
     "prop-types": "15.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^7.1.5"
+    "react-router-dom": "^7.1.5",
+    "sequelize": "^6.37.5",
+    "sequentialize": "^1.0.1",
+    "sqlite3": "^5.1.7"
   },
   "scripts": {
     "start": "craco start",
