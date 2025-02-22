@@ -68,10 +68,10 @@ const Navbar = () => {
                             data-role="Nav"
                             className="home-nav2"
                         >
-                            <span className="home-text18">Departments</span>
-                            <span className="home-text19">How it works</span>
-                            <span className="home-text20">Prices</span>
-                            <span className="home-text21">Contact</span>
+                            <Link to="/department" className="home-text18">Departments</Link>
+                            <Link to="/how-it-works" className="home-text19">News</Link>
+                            <Link to="/about" className="home-text20">About</Link>
+                            <Link to="/contact" className="home-text21">Contact</Link>
                             <a href="#book" className="home-book2 button button-main">
                                 <img
                                     alt="image"

@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import './Department.css';
 import Meetdoc from '../components/Meetdoc';
+import Appprom from '../components/Appprom';
+import Footer from '../components/Footer';
 
 const Department = (props) => {
     return (
@@ -42,6 +44,8 @@ const Department = (props) => {
                 </div>
             </div>
             <div className="meetdoc"><Meetdoc /></div>
+            <Appprom />
+            <Footer />
 
 
         </div>
