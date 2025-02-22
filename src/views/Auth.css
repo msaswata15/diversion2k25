@@ -1,0 +1,106 @@
+/* Full Page Auth Container */
+#auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #004aad, #ffffff);
+}
+
+/* Auth Box */
+#auth-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+}
+
+/* Input Boxes */
+.auth-input-box {
+    position: relative;
+    margin: 20px 0;
+}
+
+.auth-input-box input,
+.auth-input-box select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #004aad;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f8f8f8;
+    transition: all 0.3s;
+}
+
+/* Error Handling */
+.auth-input-box.auth-error input,
+.auth-input-box.auth-error select {
+    border-color: red;
+}
+
+.auth-error-text {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Floating Labels */
+.auth-input-box label {
+    position: absolute;
+    top: -12px;
+    left: 12px;
+    font-size: 12px;
+    background: white;
+    padding: 0 5px;
+    color: #004aad;
+}
+
+/* Button */
+#auth-button {
+    width: 100%;
+    padding: 12px;
+    background: #004aad;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+#auth-button:hover {
+    background: #003080;
+}
+
+/* Flash Messages */
+.auth-alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.auth-alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.auth-alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Toggle Between Login & Signup */
+.auth-toggle-link {
+    color: #004aad;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.auth-toggle-link:hover {
+    color: #003080;
+}

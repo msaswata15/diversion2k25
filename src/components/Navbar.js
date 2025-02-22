@@ -35,7 +35,7 @@ const Navbar = () => {
                         <span className="home-text29">1800 101 6346</span>
                     </button>
 
-                    <a href="#book" className="home-book1 button button-main">
+                    <a href="/auth" className="home-book1 button button-main">
                         <img
                             alt="image"
                             src="/Icons/calendar.svg"
@@ -76,7 +76,7 @@ const Navbar = () => {
                             <Link to="/news" className="home-text19">News</Link>
                             <Link to="/about" className="home-text20">About</Link>
                             <Link to="/contact" className="home-text21">Contact</Link>
-                            <a href="#book" className="home-book2 button button-main">
+                            <a href="/auth" className="home-book2 button button-main">
                                 <img
                                     alt="image"
                                     src="/Icons/calendar.svg"
