@@ -10,37 +10,37 @@ const newsData = [
         image: "/images/news1.jpg",
         title: "Breakthrough in Cardiology",
         description: "Scientists have discovered a new technique to treat heart disease...",
-        link: "/news/breakthrough-cardiology",
+        link: "/news",
     },
     {
         image: "/News/1725449970-69.jpeg",
         title: "Medical Conference 2025",
         description: "Join the biggest medical conference to discuss the future of healthcare...",
-        link: "/news/medical-conference-2025",
+        link: "/news",
     },
     {
         image: "/images/news3.jpg",
         title: "New Healthcare Policies",
         description: "Government announces new policies to improve healthcare services...",
-        link: "/news/healthcare-policies",
+        link: "/news",
     },
     {
         image: "/images/news1.jpg",
         title: "Breakthrough in Cardiology",
         description: "Scientists have discovered a new technique to treat heart disease...",
-        link: "/news/breakthrough-cardiology",
+        link: "/news",
     },
     {
         image: "/News/1725449970-69.jpeg",
         title: "Medical Conference 2025",
         description: "Join the biggest medical conference to discuss the future of healthcare...",
-        link: "/news/medical-conference-2025",
+        link: "/news",
     },
     {
         image: "/images/news3.jpg",
         title: "New Healthcare Policies",
         description: "Government announces new policies to improve healthcare services...",
-        link: "/news/healthcare-policies",
+        link: "/news",
     },
 ];
 
