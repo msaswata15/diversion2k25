@@ -19,12 +19,6 @@ const Practice = (props) => {
   );
 };
 
-Practice.defaultProps = {
-  title: "Cardiology",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-};
-
 Practice.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
