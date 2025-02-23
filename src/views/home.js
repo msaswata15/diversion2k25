@@ -315,6 +315,8 @@ const Home = (props) => {
               title="Clinical results"
               icon="/Icons/arrow-2.svg"
               description="Our Clinical Results system automates test reporting, manages patient records, and ensures quick and accurate result delivery."
+              route="/auth"
+
             ></Features>
           </div>
         </div>
@@ -345,27 +347,42 @@ const Home = (props) => {
             </Link>
             <Link to="/department/orthopedics">
               <div className="home-practice-wrapper2">
-                <Practice title="Orthopedics"></Practice>
+                <Practice
+                  title="Orthopedics"
+                  description="Our team consists of skilled orthopedic specialists dedicated to diagnosing, treating, and preventing musculoskeletal conditions, ensuring optimal bone, joint, and muscle health."
+                ></Practice>
               </div>
             </Link>
             <Link to="/department/ophthalmology">
               <div className="home-practice-wrapper3">
-                <Practice title="Ophtalmology"></Practice>
+                <Practice
+                  title="Ophtalmology"
+                  description="Our team consists of experienced ophthalmology specialists committed to diagnosing, treating, and preventing eye diseases, ensuring optimal vision and eye health."
+                ></Practice>
               </div>
             </Link>
             <Link to="/department/pediatrics">
               <div className="home-practice-wrapper4">
-                <Practice title="Pediatrics"></Practice>
+                <Practice
+                  title="Pediatrics"
+                  description="Our team consists of dedicated pediatric specialists focused on providing comprehensive medical care for infants, children, and adolescents, ensuring their healthy growth and development."
+                ></Practice>
               </div>
             </Link>
             <Link to="/department/Nutrition">
               <div className="home-practice-wrapper5">
-                <Practice title="Nutrition"></Practice>
+                <Practice
+                  title="Nutrition"
+                  description="Our team consists of expert nutrition specialists dedicated to promoting health and well-being through personalized dietary guidance, balanced nutrition, and disease prevention strategies."
+                ></Practice>
               </div>
             </Link>
             <Link to="/department/general-medicine">
               <div className="home-practice-wrapper6">
-                <Practice title="Medicine" description=""></Practice>
+                <Practice
+                  title="Medicine"
+                  description="Our team consists of experienced medical specialists committed to diagnosing, treating, and preventing a wide range of diseases, ensuring overall health and well-being."
+                ></Practice>
               </div>
             </Link>
           </div>

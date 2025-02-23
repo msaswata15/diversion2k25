@@ -16,13 +16,6 @@ const Doctor = (props) => {
   );
 };
 
-Doctor.defaultProps = {
-  heading: "Dr. Audrey Smith",
-  imageSrc: "/Doctors/doctor-1-300w.png",
-  imageAlt: "image",
-  text: "I give heads like a pro.",
-};
-
 Doctor.propTypes = {
   heading: PropTypes.string,
   imageSrc: PropTypes.string,
