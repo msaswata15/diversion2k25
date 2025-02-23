@@ -47,11 +47,16 @@ const Contact = () => {
       <div className="info-container">
         <b>
           <h3>Hospital Address</h3>
-          <p>XYZ Hospital, 123 Main Street, City, State, ZIP Code</p>
-
+          <p>
+            Medica Healthcare, 123, Lal Bahadur Shastri Avenue, Sector 5, New
+            Delhi, India – 110001.
+          </p>
+          <h3>Email : </h3>
+          <p>contact@medicahealthcare.in</p>
           <h3>Emergency Contacts</h3>
           <p>Ambulance: 102</p>
           <p>Hospital Emergency: +91-9876543210</p>
+          <p> 1800-123-4567</p>
         </b>
       </div>
       <Appprom />
