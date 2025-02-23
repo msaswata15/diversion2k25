@@ -17,7 +17,7 @@ import Pediatrics from './views/Pediatrics';
 import Ophthalmology from './views/Opthalmology';
 import PatientDashboard from './views/PatientDashboard';
 import AdminDashboard from './views/AdminDashboard';
-import BookAppointment from './views/BookAppointment';
+import BookAppointment from './components/BookAppointment';
 import BookTest from './views/BookTest';
 
 const App = () => {
