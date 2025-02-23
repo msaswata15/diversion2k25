@@ -315,6 +315,8 @@ const Home = (props) => {
               title="Clinical results"
               icon="/Icons/arrow-2.svg"
               description="Our Clinical Results system automates test reporting, manages patient records, and ensures quick and accurate result delivery."
+              route="/auth"
+
             ></Features>
           </div>
         </div>
