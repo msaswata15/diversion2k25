@@ -11,7 +11,7 @@ import Navbar from "../components/Navbar";
 import Meetdoc from "../components/Meetdoc";
 import Footer from "../components/Footer";
 import Appprom from "../components/Appprom";
-
+import ChatBotButton from "../components/ChatBotButton";
 const Home = (props) => {
   const [activeLetters, setActiveLetters] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
@@ -119,6 +119,7 @@ const Home = (props) => {
         <title>Medica Healthcare</title>
         <meta property="og:title" content="Medica template" />
       </Helmet>
+      <ChatBotButton />
       {/* Modal Section */}
       <div data-modal="practices" className="home-modal1">
         <div className="home-practices1">
