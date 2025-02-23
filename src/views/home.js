@@ -302,17 +302,17 @@ const Home = (props) => {
           <div className="home-content11">
             <Features
               title="Virtual Assistant"
-              icon="../../public/Icons/arrow-2.svg"
+              icon="/Icons/arrow-2.svg"
               description="Our Virtual Assistant automates appointments, manages records, handles billing, and streamlines hospital operations efficiently."
             ></Features>
             <Features
               title="Virtual Clinic"
-              icon="../../public/Icons/arrow-2.svg"
+              icon="/Icons/arrow-2.svg"
               description="Our Virtual Clinic enables remote consultations, manages patient records, and streamlines prescriptions for efficient healthcare delivery."
             ></Features>
             <Features
               title="Clinical results"
-              icon="../../public/Icons/arrow-2.svg"
+              icon="/Icons/arrow-2.svg"
               description="Our Clinical Results system automates test reporting, manages patient records, and ensures quick and accurate result delivery."
             ></Features>
           </div>
