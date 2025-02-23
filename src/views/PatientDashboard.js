@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { FaCalendarCheck, FaVial, FaNotesMedical, FaUserCheck, FaPlusSquare, FaFlask } from "react-icons/fa";
 import "./PatientDashboard.css"; // Importing CSS for styling
+import Navbar from "../components/Navbar";
+import PatientNavbar from "../components/PatientNavBar";
+import PatientStatusTable from "../components/PatientStatus";
+import ScheduledAppointments from "../components/ScheduledAppointments";
+import ScheduledTests from "../components/ScheduledTests";
+import MedicalReports from "../components/MedicalReports";
 
 const PatientDashboard = () => {
   const [selectedOption, setSelectedOption] = useState("appointments");
@@ -17,6 +23,9 @@ const PatientDashboard = () => {
   ];
 
   return (
+    <>
+    <PatientNavbar/>
+    
     <div className="dashboard-container">
       {/* Sidebar Menu */}
       <div className="sidebar">
@@ -38,15 +47,16 @@ const PatientDashboard = () => {
       <div className="main-content">
         <h2>{menuItems.find(item => item.key === selectedOption)?.name}</h2>
         <div className="content-box">
-          {selectedOption === "appointments" && <p>Here are your scheduled appointments...</p>}
-          {selectedOption === "tests" && <p>Here are your scheduled tests...</p>}
+          {selectedOption === "appointments" && <ScheduledAppointments/>}
+          {selectedOption === "tests" && <ScheduledTests/>}
           {selectedOption === "bookAppointment" && <p>Book a new appointment here...</p>}
           {selectedOption === "bookTest" && <p>Choose a test package to book...</p>}
-          {selectedOption === "reports" && <p>View your medical reports here...</p>}
-          {selectedOption === "status" && <p>Check your current health status...</p>}
+          {selectedOption === "reports" && <MedicalReports/>}
+          {selectedOption === "status" && <PatientStatusTable/>}
         </div>
       </div>
     </div>
+    </>
   );
 };
 

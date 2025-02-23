@@ -391,6 +391,19 @@
     justify-content: space-between;
 }
 
+.home-navbar1 {
+    width: 100%;
+    display: flex;
+    z-index: 100;
+    max-width: 1440px;
+    align-items: center;
+    padding-top: var(--dl-space-space-oneandhalfunits);
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+    padding-bottom: var(--dl-space-space-oneandhalfunits);
+    justify-content: space-between;
+}
+
 .home-left1 {
     gap: var(--dl-space-space-twounits);
     display: flex;
@@ -3141,4 +3154,17 @@
 
 .home-burger-menu {
     cursor: pointer;
+}
+
+
+.w-10{
+    width: 100px;
+} 
+
+.h-10{
+    height: 100px;
+} 
+
+.rounded-full{
+    border-radius: 50%;
 }
