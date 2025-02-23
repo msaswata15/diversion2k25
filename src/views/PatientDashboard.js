@@ -7,7 +7,7 @@ import PatientStatusTable from "../components/PatientStatus";
 import ScheduledAppointments from "../components/ScheduledAppointments";
 import ScheduledTests from "../components/ScheduledTests";
 import MedicalReports from "../components/MedicalReports";
-
+import BookAppointment from "../components/BookAppointment";
 const PatientDashboard = () => {
   const [selectedOption, setSelectedOption] = useState("appointments");
 
@@ -49,7 +49,7 @@ const PatientDashboard = () => {
         <div className="content-box">
           {selectedOption === "appointments" && <ScheduledAppointments/>}
           {selectedOption === "tests" && <ScheduledTests/>}
-          {selectedOption === "bookAppointment" && <p>Book a new appointment here...</p>}
+          {selectedOption === "bookAppointment" && <BookAppointment/>}
           {selectedOption === "bookTest" && <p>Choose a test package to book...</p>}
           {selectedOption === "reports" && <MedicalReports/>}
           {selectedOption === "status" && <PatientStatusTable/>}
